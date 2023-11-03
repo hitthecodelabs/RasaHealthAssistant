@@ -1,0 +1,90 @@
+version: "3.1"
+
+intents:
+  - saludo
+  - despedida
+  - agradecimiento
+  - otra_consulta
+  - no_consulta
+  - detectar_consulta
+  - consulta_tipo_paciente
+  - consulta_tipo_medico
+  - consulta_paciente_appointments
+  - consulta_paciente_rutinas
+  - consulta_paciente_trazabilidad
+  - consulta_medico_pacientes
+  - consulta_medico_rutinas
+  - consulta_medico_appointments
+  - fallback  # Intent para manejar la respuesta predeterminada
+
+entities:
+  - tipo_usuario
+  - paciente
+  - médico
+
+responses:
+  utter_saludo:
+  - text: "¡Hola! ¿Cómo puedo ayudarte? Antes de iniciar, ¿eres médico o paciente (estudiante/profesor)?"
+  utter_despedida:
+  - text: "¡Hasta luego! Si necesitas algo más, no dudes en contactarme."
+  utter_despedida2:
+  - text: "¡Hasta luego! Si necesitas algo más, no dudes en contactarme."
+  utter_agradecimiento:
+  - text: "Si tienes otra duda no dudes en consultarme."
+  utter_detectar_consulta:
+  - text: "Antes de continuar, ¿eres un paciente o un médico?"
+  utter_otra_consulta:
+  - text: "¿Me podrías recordar: eres médico o paciente (estudiante/profesor), por favor?"
+  utter_no_consulta:
+  - text: "¡Hasta luego! Si necesitas algo más, no dudes en contactarme."
+  utter_opcion_tipo_paciente:
+  - text: "Por favor, selecciona el tipo de consulta que deseas realizar:\n1. Historial clínico\n2. Rutinas y ejercicio físico\n3. Trazabilidad"
+  utter_opcion_tipo_medico:
+  - text: "Por favor, selecciona el tipo de consulta que deseas realizar:\n1. Pacientes\n2. Rutinas y ejercicio físico\n3. Mi trazabilidad"
+  utter_opcion_tipo_consulta_paciente:
+  - text: "Por favor, selecciona el tipo de consulta que deseas realizar:\n1. Historial clínico\n2. Rutinas y ejercicio físico\n3. Trazabilidad"
+  utter_opcion_tipo_consulta_medico:
+  - text: "Por favor, selecciona el tipo de consulta que deseas realizar:\n1. Pacientes\n2. Rutinas prescritas\n3. Trazabilidad de pacientes"
+  utter_consulta_paciente_historial:
+  - text: "Este es tu historial clínico: https://i.imgur.com/juafvas5O0a.jpg\n¿Deseas realizar otra consulta?"
+  utter_consulta_paciente_rutinas:
+  - text: "Estas son las rutinas que debes realizar: https://i.imgur.com/nGF1K8f.jpg\n¿Deseas realizar otra consulta?"
+  utter_consulta_paciente_trazabilidad:
+  - text: "La trazabilidad de tus signos vitales son: https://i.imgur.com/juafvas5O0a.jpg\n¿Deseas realizar otra consulta?"
+  utter_consulta_medico_pacientes:
+  - text: "Estos son todos tus pacientes: https://i.imgur.com/nYM6O0a.jpg\n¿Deseas realizar otra consulta?"
+  utter_consulta_medico_rutinas:
+  - text: "Estas son las rutinas que deben realizar tus pacientes: https://i.imgur.com/nGF1K8f.jpg\n¿Deseas realizar otra consulta?"
+  utter_consulta_medico_trazabilidad:
+  - text: "La trazabilidad de los signos vitales de tus pacientes son: https://i.imgur.com/juafvas5O0a.jpg\n¿Deseas realizar otra consulta?"
+  utter_default:
+  - text: "Lo siento, no he entendido lo que has dicho. ¿Podrías reformular tu pregunta?"
+
+# slots:
+#   user_id:
+#     type: text
+
+actions:
+  - action_get_logged_in_user
+  - action_detectar_consulta
+  - action_consulta_medico_pacientes
+  - action_consulta_medico_appointments
+  - action_consulta_medico_rutinas
+  - action_consulta_paciente_appointments
+  - action_consulta_paciente_trazabilidad
+  - action_consulta_paciente_rutinas
+  - action_identification_number
+#   - action_tipo_paciente
+#   - action_tipo_medico
+#   - action_detectar_consulta
+#   - action_consulta_paciente_historial
+#   - action_consulta_paciente_rutinas
+#   - action_consulta_paciente_trazabilidad
+#   - action_consulta_medico_pacientes
+#   - action_consulta_medico_rutinas
+#   - action_consulta_medico_trazabilidad
+#   - action_default_fallback
+
+session_config:
+  session_expiration_time: 61
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,372 @@
+version: "3.1"
+
+stories:
+
+# storytime
+- story: Paciente - Historial
+  steps:
+  - intent: saludo
+  - action: action_get_logged_in_user         ### saludo inicial
+  
+  - intent: detectar_consulta
+  - action: action_detectar_consulta          ### recibir consulta
+  
+  - intent: consulta_medico_pacientes
+  - action: action_consulta_medico_pacientes  ### usuario: medico | consulta: lista de pacientes
+  
+  - intent: provide_identification_number
+  - action: action_identification_number  ### usuario: medico | consulta: pacientes per id
+  
+  - intent: consulta_medico_appointments
+  - action: action_consulta_medico_appointments  ### usuario: medico | consulta: citas
+  
+  - intent: consulta_medico_rutinas
+  - action: action_consulta_medico_rutinas  ### usuario: medico | consulta: rutinas
+  
+  - intent: consulta_paciente_appointments
+  - action: action_consulta_paciente_appointments  ### usuario: paciente | consulta: citas
+  
+  - intent: consulta_paciente_trazabilidad
+  - action: action_consulta_paciente_trazabilidad  ### usuario: paciente | consulta: trazabilidad
+  
+  - intent: consulta_paciente_rutinas
+  - action: action_consulta_paciente_rutinas  ### usuario: paciente | consulta: rutinas
+
+# # -----------------------------------------------------------------------------------------------------
+# # Paciente + Historial
+# - story: Paciente - Historial
+#   steps:
+#   - intent: saludo
+#   - action: action_get_logged_in_user
+#   - intent: detectar_consulta
+#   - action: utter_detectar_consulta
+#   - intent: consulta_tipo_paciente
+#   - action: utter_opcion_tipo_paciente
+#   - intent: consulta_paciente_historial
+#   - action: utter_consulta_paciente_historial
+#   - intent: no_consulta
+#   - action: utter_no_consulta
+# # -----------------------------------------------------------------------------------------------------
+# # Paciente + Rutinas
+# - story: Paciente - Rutinas
+#   steps:
+#   - intent: saludo
+#   - action: action_get_logged_in_user
+#   - intent: detectar_consulta
+#   - action: utter_detectar_consulta
+#   - intent: consulta_tipo_paciente
+#   - action: utter_opcion_tipo_paciente
+#   - intent: consulta_paciente_rutinas
+#   - action: utter_consulta_paciente_rutinas
+#   - intent: no_consulta
+#   - action: utter_no_consulta
+# # -----------------------------------------------------------------------------------------------------
+# # Paciente + Trazabilidad
+# - story: Paciente - Trazabilidad
+#   steps:
+#   - intent: saludo
+#   - action: action_get_logged_in_user
+#   - intent: detectar_consulta
+#   - action: utter_detectar_consulta
+#   - intent: consulta_tipo_paciente
+#   - action: utter_opcion_tipo_paciente
+#   - intent: consulta_paciente_trazabilidad
+#   - action: utter_consulta_paciente_trazabilidad
+#   - intent: no_consulta
+#   - action: utter_no_consulta
+# # -----------------------------------------------------------------------------------------------------
+# # # Paciente + Historial + Rutinas
+# # - story: Paciente - Historial - Rutinas
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_historial
+# #   - action: utter_consulta_paciente_historial
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_rutinas
+# #   - action: utter_consulta_paciente_rutinas
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Paciente + Historial + Trazabilidad
+# # - story: Paciente - Historial - Trazabilidad
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_historial
+# #   - action: utter_consulta_paciente_historial
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_trazabilidad
+# #   - action: utter_consulta_paciente_trazabilidad
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Paciente + Rutinas + Historial
+# # - story: Paciente - Rutinas - Historial
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_rutinas
+# #   - action: utter_consulta_paciente_rutinas
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_historial
+# #   - action: utter_consulta_paciente_historial
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Paciente + Rutinas + Trazabilidad
+# # - story: Paciente - Rutinas - Trazabilidad
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_rutinas
+# #   - action: utter_consulta_paciente_rutinas
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_trazabilidad
+# #   - action: utter_consulta_paciente_trazabilidad
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Paciente + Trazabilidad + Rutinas
+# # - story: Paciente - Trazabilidad - Rutinas
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_trazabilidad
+# #   - action: utter_consulta_paciente_trazabilidad
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_rutinas
+# #   - action: utter_consulta_paciente_rutinas
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Paciente + Trazabilidad + Historial
+# # - story: Paciente - Trazabilidad - Historial
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_trazabilidad
+# #   - action: utter_consulta_paciente_trazabilidad
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_paciente
+# #   - action: utter_opcion_tipo_paciente
+# #   - intent: consulta_paciente_historial
+# #   - action: utter_consulta_paciente_historial
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # -----------------------------------------------------------------------------------------------------
+# # -----------------------------------------------------------------------------------------------------
+# # -----------------------------------------------------------------------------------------------------
+# # Medico + NPacientes
+# - story: Medico - NPacientes
+#   steps:
+#   - intent: saludo
+#   - action: action_get_logged_in_user
+#   - intent: detectar_consulta
+#   - action: utter_detectar_consulta
+#   - intent: consulta_tipo_medico
+#   - action: utter_opcion_tipo_medico
+#   - intent: consulta_medico_pacientes
+#   - action: utter_consulta_medico_pacientes
+#   - intent: no_consulta
+#   - action: utter_no_consulta
+# # -----------------------------------------------------------------------------------------------------
+# # Medico + Rutinas
+# - story: Medico - Rutinas
+#   steps:
+#   - intent: saludo
+#   - action: action_get_logged_in_user
+#   - intent: detectar_consulta
+#   - action: utter_detectar_consulta
+#   - intent: consulta_tipo_medico
+#   - action: utter_opcion_tipo_medico
+#   - intent: consulta_medico_rutinas
+#   - action: action_consulta_medico_rutinas
+#   - intent: no_consulta
+#   - action: utter_no_consulta
+# # -----------------------------------------------------------------------------------------------------
+# # Medico + Trazabilidad
+# - story: Medico - Trazabilidad
+#   steps:
+#   - intent: saludo
+#   - action: action_get_logged_in_user
+#   - intent: detectar_consulta
+#   - action: utter_detectar_consulta
+#   - intent: consulta_tipo_medico
+#   - action: utter_opcion_tipo_medico
+#   - intent: consulta_medico_trazabilidad
+#   - action: utter_consulta_medico_trazabilidad
+#   - intent: no_consulta
+#   - action: utter_no_consulta
+# # -----------------------------------------------------------------------------------------------------
+# # # Medico + NPacientes + Rutinas
+# # - story: Medico - NPacientes - Rutinas
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_pacientes
+# #   - action: utter_consulta_medico_pacientes
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_rutinas
+# #   - action: action_consulta_medico_rutinas
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Medico + NPacientes + Trazabilidad
+# # - story: Medico - NPacientes - Trazabilidad
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_pacientes
+# #   - action: utter_consulta_medico_pacientes
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_trazabilidad
+# #   - action: utter_consulta_medico_trazabilidad
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Medico + Rutinas + NPacientes
+# # - story: Medico - Rutinas - NPacientes
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_rutinas
+# #   - action: action_consulta_medico_rutinas
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_pacientes
+# #   - action: utter_consulta_medico_pacientes
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Medico + Rutinas + Trazabilidad
+# # - story: Medico - Rutinas - Trazabilidad
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_rutinas
+# #   - action: action_consulta_medico_rutinas
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_trazabilidad
+# #   - action: utter_consulta_medico_trazabilidad
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Medico + Trazabilidad + Rutinas
+# # - story: Medico - Trazabilidad - Rutinas
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_trazabilidad
+# #   - action: utter_consulta_medico_trazabilidad
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_rutinas
+# #   - action: action_consulta_medico_rutinas
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# # # -----------------------------------------------------------------------------------------------------
+# # # Medico + Trazabilidad + NPacientes
+# # - story: Medico - Trazabilidad - NPacientes
+# #   steps:
+# #   - intent: saludo
+# #   - action: action_get_logged_in_user
+# #   - intent: detectar_consulta
+# #   - action: utter_detectar_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_trazabilidad
+# #   - action: utter_consulta_medico_trazabilidad
+# #   - intent: otra_consulta
+# #   - action: utter_otra_consulta
+# #   - intent: consulta_tipo_medico
+# #   - action: utter_opcion_tipo_medico
+# #   - intent: consulta_medico_pacientes
+# #   - action: utter_consulta_medico_pacientes
+# #   - intent: no_consulta
+# #   - action: utter_no_consulta
+# -----------------------------------------------------------------------------------------------------
+
+# Fallback
+# -----------------------------------------------------------------------------------------------------
+- story: fallback
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+# -----------------------------------------------------------------------------------------------------
+# Paciente + Variaciones
+# -----------------------------------------------------------------------------------------------------
+# Medico + Variaciones

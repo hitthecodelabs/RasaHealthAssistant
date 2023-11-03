@@ -1,0 +1,93 @@
+version: "3.1"
+
+stories:
+- story: Saludo y despedida
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: despedida
+  - action: utter_despedida
+
+- story: Consulta tipo usuario - Paciente
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: detectar_consulta
+  - action: utter_detectar_consulta
+  - slot_was_set:
+      - tipo_usuario: "paciente"
+  - action: utter_opcion_tipo_paciente
+  - intent: consulta_paciente_historial
+  - action: utter_consulta_paciente_historial
+  - intent: consulta_paciente_rutinas
+  - action: utter_consulta_paciente_rutinas
+  - intent: consulta_paciente_trazabilidad
+  - action: utter_consulta_paciente_trazabilidad
+  - intent: despedida
+  - action: utter_despedida
+
+- story: Consulta tipo usuario - Médico
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: detectar_consulta
+  - action: utter_detectar_consulta
+  - slot_was_set:
+      - tipo_usuario: "médico"
+  - action: utter_opcion_tipo_medico
+  - intent: consulta_medico_pacientes
+  - action: utter_consulta_medico_pacientes
+  - intent: consulta_medico_rutinas
+  - action: utter_consulta_medico_rutinas
+  - intent: consulta_medico_trazabilidad
+  - action: utter_consulta_medico_trazabilidad
+  - intent: despedida
+  - action: utter_despedida
+
+- story: Consulta tipo usuario desconocido
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: detectar_consulta
+  - action: utter_detectar_consulta
+  - slot_was_set:
+      - tipo_usuario: "desconocido"
+  - action: utter_default
+
+- story: Consulta tipo usuario incorrecto
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: detectar_consulta
+  - action: utter_detectar_consulta
+  - slot_was_set:
+      - tipo_usuario: "otro"
+  - action: utter_default
+
+- story: Consulta tipo usuario - Paciente - Historial
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: detectar_consulta
+  - action: utter_detectar_consulta
+  - slot_was_set:
+      - tipo_usuario: "paciente"
+  - action: utter_opcion_tipo_paciente
+  - intent: consulta_paciente_historial
+  - action: utter_consulta_paciente_historial
+  - intent: despedida
+  - action: utter_despedida
+
+- story: Consulta tipo usuario - Paciente - Rutinas
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: detectar_consulta
+  - action: utter_detectar_consulta
+  - slot_was_set:
+      - tipo_usuario: "paciente"
+  - action: utter_opcion_tipo_paciente
+  - intent: consulta_paciente_rutinas
+  - action: utter_consulta_paciente_rutinas
+  - intent: despedida
+  - action: utter_despedida

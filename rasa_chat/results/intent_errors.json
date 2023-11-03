@@ -1,0 +1,18 @@
+[
+  {
+    "text": "Rutinas y ejercicio físico",
+    "intent": "consulta_paciente_rutinas",
+    "intent_prediction": {
+      "name": "consulta_medico_rutinas",
+      "confidence": 0.5152918696403503
+    }
+  },
+  {
+    "text": "Trazabilidad",
+    "intent": "consulta_paciente_trazabilidad",
+    "intent_prediction": {
+      "name": "consulta_medico_trazabilidad",
+      "confidence": 0.5937283635139465
+    }
+  }
+]

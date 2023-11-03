@@ -1,0 +1,10 @@
+__pycache__
+venv
+myenv
+db.sqlite3
+.vscode
+.kolo
+cache
+postgresql/data/*
+!postgresql/data/init
+*.tar.gz

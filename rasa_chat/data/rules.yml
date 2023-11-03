@@ -1,0 +1,87 @@
+version: "3.1"
+
+rules:
+- rule: Saludo
+  steps:
+  - intent: saludo
+  - action: action_get_logged_in_user
+
+- rule: Detectar consulta
+  steps:
+  - intent: detectar_consulta
+  - action: action_detectar_consulta
+
+- rule: Consulta médico - Trazabilidad
+  steps:
+  - intent: consulta_medico_appointments
+  - action: action_consulta_medico_appointments
+
+- rule: Consulta médico - Rutinas y ejercicio físico
+  steps:
+  - intent: consulta_medico_rutinas
+  - action: action_consulta_medico_rutinas
+
+- rule: Consulta paciente - Historial clínico
+  steps:
+  - intent: consulta_paciente_appointments
+  - action: action_consulta_paciente_appointments
+
+- rule: Consulta médico - Pacientes
+  steps:
+  - intent: consulta_medico_pacientes
+  - action: action_consulta_medico_pacientes
+
+- rule: Consulta paciente - Trazabilidad
+  steps:
+  - intent: consulta_paciente_trazabilidad
+  - action: action_consulta_paciente_trazabilidad
+
+- rule: Consulta paciente - Rutinas
+  steps:
+  - intent: consulta_paciente_rutinas
+  - action: action_consulta_paciente_rutinas
+
+- rule: Consulta Medico - MH
+  steps:
+  - intent: provide_identification_number
+  - action: action_identification_number
+
+
+
+
+
+
+- rule: Despedida
+  steps:
+  - intent: despedida
+  - action: utter_despedida
+
+- rule: Post - Agradecimiento
+  steps:
+  - intent: agradecimiento
+  - action: utter_agradecimiento
+
+- rule: Otra consulta
+  steps:
+  - intent: otra_consulta
+  - action: utter_otra_consulta
+
+- rule: No mas consulta
+  steps:
+  - intent: no_consulta
+  - action: utter_no_consulta
+  
+- rule: Fallback
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+
+- rule: Consulta tipo paciente
+  steps:
+  - intent: consulta_tipo_paciente
+  - action: utter_opcion_tipo_paciente
+
+- rule: Consulta tipo medico
+  steps:
+  - intent: consulta_tipo_medico
+  - action: utter_opcion_tipo_medico

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center">Medical History</h1>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Personal Information</h3>
+            <table class="table">
+                <tr>
+                    <td>Name:</td>
+                    <td>{{ appointment.patient.first_name }}</td>
+                </tr>
+                <tr>
+                    <td>ID:</td>
+                    <td>{{ appointment.phone_number }}</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td>{{ appointment.patient.age }}</td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>{{ appointment.patient.gender }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-12">
+            <h3>Medical Information</h3>
+            <form role="form" method="post" action="{% url 'appointments:add_prescription' appointment.id %}">
+                {% csrf_token %}
+                <div class="form-group my-2">
+                    <label class="fs-3" for="name">Prescription</label>
+                    <textarea name="patient_need" class="form-control"
+                        rows="3">{{ appointment.prescription.patient_need}}</textarea>
+                </div>
+                <div class="form-group my-2">
+                    <label class="fs-3" for="name">Description</label>
+                    <textarea name='patient_condition' class="form-control"
+                        rows="3">{{ appointment.prescription.patient_condition}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary d-flex m-auto">Submit</button>
+            </form>
+        </div>
+    </div>
+    <hr>
+</div>
+
+{% endblock content %}

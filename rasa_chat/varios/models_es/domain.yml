@@ -1,0 +1,50 @@
+version: "3.1"
+
+intents:
+  - saludo
+  - despedida
+  - informacion_usuario
+  - informacion_consulta
+  - mostrar_historial
+  - mostrar_rutinas
+  - mostrar_trazabilidad
+  - mostrar_pacientes
+  
+entities:
+  - tipo_usuario
+  - tipo_consulta
+  
+responses:
+  utter_saludo:
+  - text: "¡Hola! ¿Cómo puedo ayudarte?"
+  utter_despedida:
+  - text: "¡Hasta luego! Si necesitas algo más, no dudes en contactarme."
+  utter_opcion_tipo_usuario:
+  - text: "Antes de continuar, ¿eres un estudiante, un maestro o un médico?"
+  utter_opcion_tipo_consulta_paciente:
+  - text: "Por favor, selecciona el tipo de consulta que deseas realizar:\n1. Historial clínico\n2. Rutinas y ejercicio físico\n3. Trazabilidad"
+  utter_opcion_tipo_consulta_medico:
+  - text: "Por favor, selecciona el tipo de consulta que deseas realizar:\n1. Pacientes\n2. Rutinas y ejercicio físico\n3. Trazabilidad"
+  utter_historial_clinico:
+  - text: "Este es tu historial clínico: https://i.imgur.com/juafvas5O0a.jpg"
+  utter_rutinas_ejercicio:
+  - text: "Estas son las rutinas que debes realizar: https://i.imgur.com/nGF1K8f.jpg"
+  utter_trazabilidad:
+  - text: "La trazabilidad de tus signos vitales son: https://i.imgur.com/juafvas5O0a.jpg"
+  utter_pacientes:
+  - text: "Estos son todos tus pacientes: https://i.imgur.com/nYM6O0a.jpg"
+
+actions:
+  - utter_saludo
+  - utter_despedida
+  - utter_opcion_tipo_usuario
+  - utter_opcion_tipo_consulta_paciente
+  - utter_opcion_tipo_consulta_medico
+  - utter_historial_clinico
+  - utter_rutinas_ejercicio
+  - utter_trazabilidad
+  - utter_pacientes
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

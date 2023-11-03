@@ -1,0 +1,280 @@
+version: "3.1"
+
+nlu:
+- intent: saludo
+  examples: |
+    - Hola
+    - hola
+    - Qué tal
+    - Que tal
+    - Que tal?
+    - Qué tal?
+    - Buen día
+    - Buen dia
+    - buen dia
+    - Buenas tardes
+    - buenas tardes
+    - Buenos días
+    - Buenos dias
+    - buenos dias
+
+- intent: despedida
+  examples: |
+    - Adiós
+    - Adios
+    - adios
+    - Chao
+    - chao
+    - Hasta luego
+    - hasta luego
+    - Hasta luego, muchas gracias
+    - hasta luego, muchas gracias
+    - Ha sido un gusto
+    - ha sido un gusto
+
+- intent: agradecimiento
+  examples: |
+    - Ok
+    - ok
+    - Gracias
+    - gracias
+    - Perfecto
+    - perfecto
+    - Listo, muchas gracias
+    - listo, muchas gracias
+    - Listo muchas gracias
+    - listo muchas gracias
+    - Muchas gracias
+    - muchas gracias
+    - Muchas gracias, me ha servido
+    - muchas gracias, me ha servido
+    - Muchas gracias, me ha sido util
+    - Muchas gracias, me ha sido útil
+
+- intent: otra_consulta
+  examples: |
+    - Sí
+    - Si
+    - sí
+    - si
+    - Así es
+    - Asi es
+    - así es
+    - asi es
+    - otra consulta
+    - Otra consulta
+    - Deseo realizar otra consulta
+    - deseo realizar otra consulta
+
+- intent: no_consulta
+  examples: |
+    - No
+    - no
+    - Negativo
+    - negativo
+    - No deseo más consultas
+    - No deseo mas consultas
+    - No, muchas gracias
+    - no, muchas gracias
+    - No muchas gracias
+    - no muchas gracias
+
+- intent: provide_identification_number
+  examples: |
+    - [1234567891](identification_number)
+    
+- intent: detectar_consulta
+  examples: |
+    - Consulta
+    - consulta
+    - Una consulta
+    - una consulta
+    - Deseo realizar hacer una consulta
+    - deseo realizar hacer una consulta
+    - Quiero hacer una consulta
+    - quiero hacer una consulta
+    - Quiero realizar una consulta
+    - quiero realizar una consulta
+    - necesito ayuda
+    - Necesito ayuda
+    - necesito ayuda para una consulta
+    - Necesito ayuda para una consulta
+    - quiero asistencia en una consulta
+    - Quiero asistencia en una consulta
+    - Quiero saber algo
+    - quiero saber algo
+
+# - intent: consulta_tipo_usuario
+#   examples: |
+#     - Soy [paciente](tipo_usuario)
+#     - soy [paciente](tipo_usuario)
+#     - yo soy [paciente](tipo_usuario)
+#     - Soy [médico](tipo_usuario)
+#     - soy [médico](tipo_usuario)
+#     - yo soy [médico](tipo_usuario)
+#     - [Paciente](tipo_usuario)
+#     - [Médico](tipo_usuario)
+
+- intent: consulta_tipo_paciente
+  examples: |
+    - Paciente
+    - paciente
+    - Estudiante
+    - estudiante
+    - Profesor
+    - profesor
+    - Soy paciente
+    - soy paciente
+    - Soy estudiante
+    - soy estudiante
+    - Soy profesor
+    - soy profesor
+    - Yo soy paciente
+    - yo soy paciente
+    - Yo soy estudiante
+    - yo soy estudiante
+    - Yo soy profesor
+    - yo soy profesor
+
+- intent: consulta_tipo_medico
+  examples: |
+    - Doctor
+    - doctor
+    - Médico
+    - médico
+    - Medico
+    - medico
+    - Soy médico
+    - soy médico
+    - Soy medico
+    - soy medico
+    - Soy doctor
+    - soy doctor
+    - Yo soy médico
+    - yo soy médico
+    - Yo soy medico
+    - yo soy medico
+    - Yo soy doctor
+    - yo soy doctor
+
+- intent: consulta_paciente_appointments
+  examples: |
+    - Historial clínico
+    - Historial clinico
+    - historial clinico
+    - Historia clínico
+    - Historia clinico
+    - historia clinico
+    - Quiero saber mi historial clínico
+    - Quiero saber mi historial clinico
+    - quiero saber mi historial clinico
+    - Mi historial clínico
+    - mi historial clinico
+    - Mi historial clinico
+    - ¿Cuál es mi historial médico?
+    - ¿Cual es mi historial medico?
+    - ¿cual es mi historial medico?
+    - Cual es mi historial medico?
+    - cual es mi historial medico?
+    - ¿Cuál es mi historial clínico?
+    - ¿Cual es mi historial clinico?
+    - ¿cual es mi historial clinico?
+    - Cual es mi historial clinico?
+    - cual es mi historial clinico?
+
+- intent: consulta_paciente_rutinas
+  examples: |
+    - rutinas y ejercicio físico
+    - Rutinas y ejercicio físico
+    - Quiero conocer mis rutinas de ejercicio
+    - quiero conocer mis rutinas de ejercicio
+    - ¿Cuáles son mis rutinas?
+    - ¿Cuáles son mis rutinas?
+    - ¿Cuales son mis rutinas?
+    - ¿Cuales son mis rutinas?
+    - Cuáles son mis rutinas?
+    - cuáles son mis rutinas?
+    - Cuales son mis rutinas?
+    - cuales son mis rutinas?
+
+- intent: consulta_paciente_trazabilidad
+  examples: |
+    - Mi trazabilidad
+    - mi trazabilidad
+    - Quiero conocer la trazabilidad
+    - quiero conocer la trazabilidad
+    - Quiero saber más acerca de la trazabilidad
+    - quiero saber más acerca de la trazabilidad
+    - Quiero saber trazabilidad
+    - quiero saber la trazabilidad
+    - Quiero saber mi trazabilidad
+    - quiero saber mi trazabilidad
+    - ¿Cómo va mi trazabilidad?
+    - Cómo va mi trazabilidad?
+    - ¿cómo va mi trazabilidad?
+    - cómo va mi trazabilidad?
+    - como va mi trazabilidad?
+    - como va mi trazabilidad?
+    - Quiero ver mis signos vitales
+    - quiero ver mis signos vitales
+    - mis signos vitales
+
+- intent: consulta_medico_pacientes
+  examples: |
+    - Pacientes
+    - pacientes|
+    - Mis acientes
+    - mis pacientes
+    - ¿Cuáles son mis pacientes?
+    - ¿Cuales son mis pacientes?
+    - Cuales son mis pacientes?
+    - cuales son mis pacientes?
+    - Mis pacientes?
+    - mis pacientes?
+    - Lista de pacientes
+    - lista de pacientes
+    - Lista de mis pacientes
+    - lista de mis pacientes
+
+- intent: consulta_medico_rutinas
+  examples: |
+    - Rutinas prescritas
+    - rutinas prescritas
+    - Rutinas prescritas a pacientes
+    - rutinas prescritas a pacientes
+    - ¿Qué rutinas he prescrito?
+    - ¿qué rutinas he prescrito?
+    - ¿Que rutinas he prescrito?
+    - ¿que rutinas he prescrito?
+    - Qué rutinas he prescrito?
+    - Que rutinas he prescrito?
+    - qué rutinas he prescrito?
+    - Que rutinas he prescrito?
+    - que rutinas he prescrito?
+    - Rutinas recomendadas
+    - rutinas recomendadas
+
+- intent: consulta_medico_appointments
+  examples: |
+    - Trazabilidad de pacientes
+    - Trazabilida de pacientes
+    - trazabilidad de pacientes
+    - trazabilida de pacientes
+    - Trazabilidad de mis pacientes
+    - Trazabilida de mis pacientes
+    - trazabilidad de mis pacientes
+    - trazabilida de mis pacientes
+    - Quiero ver la trazabilidad
+    - quiero ver la trazabilidad
+    - Quiero ver la trazabilidad de mis pacientes
+    - quiero ver la trazabilidad de mis pacientes
+    - Quiero conocer la trazabilidad
+    - quiero conocer la trazabilidad
+    - Quiero conocer la trazabilidad de mis pacientes
+    - quiero conocer la trazabilidad de mis pacientes
+    - Signos vitales de mis pacientes
+    - signos vitales de mis pacientes
+
+- regex: identification_number
+  examples: |
+    - \d{10}

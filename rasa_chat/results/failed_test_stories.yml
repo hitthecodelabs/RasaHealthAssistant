@@ -1,0 +1,71 @@
+version: "3.1"
+stories:
+- story: Consulta tipo usuario - Paciente (/mnt/c/Users/JaimePanchana/Desktop/Jean/2go/python/1FL/rasa3/RasaChat/rasa_chat/tests/test_stories.yml)
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: consulta_tipo_usuario
+  - action: action_tipo_usuario
+  - slot_was_set:
+    - tipo_usuario: paciente
+  - action: utter_opcion_tipo_consulta_paciente  # predicted: action_listen
+  - intent: consulta_paciente_historial
+  - action: action_consulta_paciente_historial
+  - intent: consulta_paciente_rutinas
+  - action: action_consulta_paciente_rutinas
+  - intent: consulta_paciente_trazabilidad
+  - action: action_consulta_paciente_trazabilidad
+  - intent: despedida
+  - action: utter_despedida
+- story: Consulta tipo usuario - Médico (/mnt/c/Users/JaimePanchana/Desktop/Jean/2go/python/1FL/rasa3/RasaChat/rasa_chat/tests/test_stories.yml)
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: consulta_tipo_usuario
+  - action: action_tipo_usuario
+  - slot_was_set:
+    - tipo_usuario: médico
+  - action: utter_opcion_tipo_consulta_medico  # predicted: action_listen
+  - intent: consulta_medico_pacientes
+  - action: action_consulta_medico_pacientes
+  - intent: consulta_medico_rutinas
+  - action: action_consulta_medico_rutinas
+  - intent: consulta_medico_trazabilidad
+  - action: action_consulta_medico_trazabilidad
+  - intent: despedida
+  - action: utter_despedida
+- story: Consulta tipo usuario desconocido (/mnt/c/Users/JaimePanchana/Desktop/Jean/2go/python/1FL/rasa3/RasaChat/rasa_chat/tests/test_stories.yml)
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: consulta_tipo_usuario
+  - action: action_tipo_usuario
+  - slot_was_set:
+    - tipo_usuario: desconocido
+  - action: utter_opcion_tipo_usuario  # predicted: action_listen
+- story: Consulta tipo usuario - Paciente - Historial (/mnt/c/Users/JaimePanchana/Desktop/Jean/2go/python/1FL/rasa3/RasaChat/rasa_chat/tests/test_stories.yml)
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: consulta_tipo_usuario
+  - action: action_tipo_usuario
+  - slot_was_set:
+    - tipo_usuario: paciente
+  - action: utter_opcion_tipo_consulta_paciente  # predicted: action_listen
+  - intent: consulta_paciente_historial
+  - action: action_consulta_paciente_historial
+  - intent: despedida
+  - action: utter_despedida
+- story: Consulta tipo usuario - Paciente - Rutinas (/mnt/c/Users/JaimePanchana/Desktop/Jean/2go/python/1FL/rasa3/RasaChat/rasa_chat/tests/test_stories.yml)
+  steps:
+  - intent: saludo
+  - action: utter_saludo
+  - intent: consulta_tipo_usuario
+  - action: action_tipo_usuario
+  - slot_was_set:
+    - tipo_usuario: paciente
+  - action: utter_opcion_tipo_consulta_paciente  # predicted: action_listen
+  - intent: consulta_paciente_rutinas
+  - action: action_consulta_paciente_rutinas
+  - intent: despedida
+  - action: action_listen  # predicted: utter_despedida
