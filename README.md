@@ -1,6 +1,6 @@
 # RasaHealthAssistant
 
-MedicoChat-Connect is a Django-based medical appointment management platform designed to facilitate interactions between doctors and patients. This system leverages an intelligent chatbot, built with Rasa, to provide a conversational interface through which users can access personalized information such as medical prescriptions, exercise routines, appointment schedules, and more.
+RasaHealthAssistant is a Django-based medical appointment management platform designed to facilitate interactions between doctors and patients. This system leverages an intelligent chatbot, built with Rasa, to provide a conversational interface through which users can access personalized information such as medical prescriptions, exercise routines, appointment schedules, and more.
 
 ## Features
 
