@@ -47,3 +47,15 @@ python manage.py migrate
 # Run the server locally
 python manage.py runserver
 ```
+
+## Contributing
+Contributions to RasaHealthAssistant are welcome! Here's how you can contribute:
+
+Fork the repository on GitHub.
+Create a new branch for your proposed feature or fix.
+Commit your changes with an informative description.
+Push your branch and submit a pull request.
+We appreciate your input!
+
+## License
+RasaHealthAssistant is open source software licensed under the MIT License. See the LICENSE file for more details.
